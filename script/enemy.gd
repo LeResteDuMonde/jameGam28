@@ -38,9 +38,10 @@ func _physics_process(delta):
 #to find the spawn position for the enemy
 func findAndSetSpawnPosition():
 	
-	var boundaries = get_window().size
-	var minRadius = sqrt( boundaries.x**2+boundaries.y**2)  #/2 smhw wtf?
-	var radius = minRadius +  50 #approximate margine (could be calculated with width of monster
+	var boundaries = get_viewport_rect().size
+	print(boundaries)
+	var minRadius = sqrt( boundaries.x**2+boundaries.y**2)  /2
+	var radius = minRadius +  10 #approximate margine (could be calculated with width of monster
 	var angle = randf_range(0,2*PI)
 	
 	var pos = Vector2(cos(angle)*radius, sin(angle)*radius)
