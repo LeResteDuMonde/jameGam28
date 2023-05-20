@@ -22,5 +22,20 @@ func _physics_process(delta):
 			velocity = velocity.normalized() * newSpeed
 		else:
 			velocity = Vector2.ZERO
+			
+	replacePayerInViewport()
 
 	move_and_slide()
+	
+func replacePayerInViewport():
+	var viewport = get_viewport_rect().size
+	
+	if transform.origin.x>viewport.x/2  or transform.origin.x<-viewport.x/2:
+		velocity.x = viewport.x/2-transform.origin.x
+		
+	if transform.origin.y>viewport.y/2  or transform.origin.y<-viewport.y/2:
+		velocity.y = viewport.y/2-transform.origin.y
+
+		
+	print(velocity)
+	
