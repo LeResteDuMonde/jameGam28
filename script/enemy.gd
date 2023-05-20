@@ -21,6 +21,7 @@ func _physics_process(delta):
 	if Target != null:
 		var targetPos = Target.global_position
 		direction = position.direction_to(targetPos)
+		direction = position.direction_to(targetPos)
 		velocity += direction * Acceleration * delta
 		velocity = velocity.limit_length(MaxSpeed)
 	else:

@@ -6,4 +6,3 @@ var instance
 
 func _ready():
 	if instance == null: instance = self
-"res://scene/enemy.tscn"

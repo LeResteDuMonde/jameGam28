@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cbosajbancdds" path="res://sprite/bomb.png" id="3_ob7i2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13tcu"]
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdywk"]
-radius = 6.0
+radius = 20.63
 
 [node name="Bomb" instance=ExtResource("1_8pq72")]
 script = ExtResource("2_b124x")
@@ -15,6 +16,7 @@ script = ExtResource("2_b124x")
 [node name="CollisionShape2D" parent="." index="0"]
 scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_13tcu")
+debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
 [node name="Sprite2D" parent="." index="1"]
 scale = Vector2(1, 1)
@@ -22,3 +24,12 @@ texture = ExtResource("3_ob7i2")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_jdywk")
+
+[node name="Impact" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Impact" index="0"]
+scale = Vector2(1.253, 1.253)
+shape = SubResource("CircleShape2D_jdywk")
+debug_color = Color(0.72549, 0.47451, 0.133333, 0.419608)
+
+[connection signal="area_shape_entered" from="Impact" to="." method="_on_impact_area_shape_entered"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://de8gj08awcu3f"]
+
+[ext_resource type="Texture2D" uid="uid://cwn34lpin40mk" path="res://sprite/explosion.png" id="1_ir1yl"]
+[ext_resource type="Script" path="res://script/explosion.gd" id="1_yhwf1"]
+[ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_frc05"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xat8u"]
+radius = 20.63
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57077"]
+atlas = ExtResource("1_ir1yl")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apfxj"]
+atlas = ExtResource("1_ir1yl")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdpu4"]
+atlas = ExtResource("1_ir1yl")
+region = Rect2(0, 36, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emm2m"]
+atlas = ExtResource("1_ir1yl")
+region = Rect2(36, 36, 36, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tvdh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57077")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apfxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdpu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emm2m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gi153"]
+radius = 20.63
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_yhwf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.253, 1.253)
+shape = SubResource("CircleShape2D_xat8u")
+debug_color = Color(0.72549, 0.47451, 0.133333, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_frc05")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tvdh6")
+
+[node name="Impact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Impact"]
+scale = Vector2(1.253, 1.253)
+shape = SubResource("CircleShape2D_gi153")
+debug_color = Color(0.72549, 0.47451, 0.133333, 0.419608)
+
+[connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]

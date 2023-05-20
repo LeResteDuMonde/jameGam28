@@ -1,27 +1,41 @@
 extends StaticBody2D
+class_name dragable
 
 var cursorManager
 var sprite
+var collisionShape
+
 var selected = false
-# Called when the node enters the scene tree for the first time.
+var active = false
+
 func _ready():
+	init()
+
+func _process(delta):
+	move(delta)
+
+func init():
 	sprite = $Sprite2D
+	collisionShape = $CollisionShape2D
 	cursorManager = $"../CursorManager"
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if selected:
-		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
-
+func move(delta):
+	if selected: global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") && !cursorManager.selecting:
-		cursorManager.selecting = true
-		selected = true
-		sprite.z_index = 1
+		select()
+	else: if Input.is_action_just_released("click") && selected:
+		unselect()
 		
-	if Input.is_action_just_released("click") && selected:
-		selected = false
-		sprite.z_index = 0 
-		
+func select():
+	collisionShape.disabled = true
+	cursorManager.selecting = true
+	selected = true
+	sprite.z_index = 1
+	
+func unselect():
+	collisionShape.disabled = false
+	selected = false
+	sprite.z_index = 0
+	active = true
