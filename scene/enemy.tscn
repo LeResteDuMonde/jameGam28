@@ -4,18 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_gum2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efbrt"]
-radius = 6.0
+radius = 60.0
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(453, -116)
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_block_on_wall = false
-platform_on_leave = 2
 script = ExtResource("1_r3vrq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_gum2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
