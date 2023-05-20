@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c0d1otlxk4y35"]
 
 [ext_resource type="Script" path="res://script/enemy.gd" id="1_r3vrq"]
-[ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_gum2f"]
+[ext_resource type="SpriteFrames" uid="uid://mn0kr5wlfimh" path="res://animation/zombie.tres" id="2_e5rb2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_efbrt"]
 radius = 6.0
@@ -10,9 +10,8 @@ radius = 6.0
 position = Vector2(453, -116)
 script = ExtResource("1_r3vrq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_gum2f")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_e5rb2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_efbrt")

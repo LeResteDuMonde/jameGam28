@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://mn0kr5wlfimh"]
+
+[ext_resource type="Texture2D" uid="uid://b6g3o6v7pnuml" path="res://sprite/zombie.png" id="1_bnhro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6omd"]
+atlas = ExtResource("1_bnhro")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ownkh"]
+atlas = ExtResource("1_bnhro")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jscyp"]
+atlas = ExtResource("1_bnhro")
+region = Rect2(0, 12, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpdas"]
+atlas = ExtResource("1_bnhro")
+region = Rect2(12, 12, 12, 12)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6omd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ownkh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jscyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpdas")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]

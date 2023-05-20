@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var Target
 var gameManager
+var animation
 
 const Speed = 20
 const MaxSpeed = 30
@@ -12,6 +13,8 @@ const MinVelocity = 1
 func _ready():
 	gameManager = $"../../GameManager"
 	Target = gameManager.Player
+	animation = $AnimatedSprite2D
+	animation.play("run")
 	
 	findAndSetSpawnPosition()
 
@@ -33,9 +36,14 @@ func _physics_process(delta):
 			velocity = velocity.normalized() * newSpeed
 		else:
 			velocity = Vector2.ZERO
-
-	# set_velocity(velocity)
+	
+	rotateAnimation(direction)
 	move_and_slide()
+	
+func rotateAnimation(direction):
+	var rotation = Vector2(-direction[1],direction[0]).angle()
+	rotation = round(rotation / deg_to_rad(90)) * deg_to_rad(90)
+	animation.rotation = rotation
 
 #to find the spawn position for the enemy
 func findAndSetSpawnPosition():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh5vw02qqgf8r"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_gbu76"]
-[ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_e4odf"]
+[ext_resource type="SpriteFrames" uid="uid://bgglwrcv4i76y" path="res://animation/player.tres" id="2_u8ixx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr17n"]
 radius = 6.0
@@ -9,10 +9,10 @@ radius = 6.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gbu76")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_e4odf")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fr17n")
 debug_color = Color(0, 0.564706, 0.709804, 0.819608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_u8ixx")
+animation = &"run"
