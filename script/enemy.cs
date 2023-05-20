@@ -1,7 +1,6 @@
 using Godot;
 using System;
 
-
 public partial class enemy : CharacterBody2D
 {
 	public Node2D Target;
@@ -15,10 +14,7 @@ public partial class enemy : CharacterBody2D
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
 	public override void _Ready(){
-		GD.Print("enemy _Ready called");
-		Node2D player = gameManager.Instance.Player;
-		Target = player;
-		GD.Print(player);
+		Target = gameManager.Instance.Player;
 	}
 
  	public override void _PhysicsProcess(double delta)
