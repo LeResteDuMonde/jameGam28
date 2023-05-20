@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://q1rw31lpoua"]
+
+[ext_resource type="Texture2D" uid="uid://ccd55ces3xfqp" path="res://sprite/conveyer.png" id="1_ba2vk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hokum"]
+atlas = ExtResource("1_ba2vk")
+region = Rect2(0, 0, 128, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rctef"]
+atlas = ExtResource("1_ba2vk")
+region = Rect2(0, 24, 128, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nllta"]
+atlas = ExtResource("1_ba2vk")
+region = Rect2(0, 48, 128, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilpkd"]
+atlas = ExtResource("1_ba2vk")
+region = Rect2(0, 72, 128, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hokum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rctef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nllta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilpkd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

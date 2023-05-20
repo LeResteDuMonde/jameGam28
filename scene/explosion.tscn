@@ -1,11 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://de8gj08awcu3f"]
+[gd_scene load_steps=10 format=3 uid="uid://de8gj08awcu3f"]
 
 [ext_resource type="Texture2D" uid="uid://cwn34lpin40mk" path="res://sprite/explosion.png" id="1_ir1yl"]
 [ext_resource type="Script" path="res://script/explosion.gd" id="1_yhwf1"]
 [ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_frc05"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xat8u"]
-radius = 20.63
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57077"]
 atlas = ExtResource("1_ir1yl")
@@ -48,11 +45,6 @@ radius = 20.63
 
 [node name="Explosion" type="Node2D"]
 script = ExtResource("1_yhwf1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1.253, 1.253)
-shape = SubResource("CircleShape2D_xat8u")
-debug_color = Color(0.72549, 0.47451, 0.133333, 0.419608)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

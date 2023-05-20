@@ -38,9 +38,9 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func rotateAnimation(direction):
-	var rotation = Vector2(-direction[1],direction[0]).angle()
-	rotation = round(rotation / deg_to_rad(90)) * deg_to_rad(90)
-	animation.rotation = rotation
+	var rotationAnim = Vector2(-direction[1],direction[0]).angle()
+	rotationAnim = round(rotationAnim / deg_to_rad(90)) * deg_to_rad(90)
+	animation.rotation = rotationAnim
 	
 func replacePayerInViewport():
 	var viewport = get_viewport_rect().size

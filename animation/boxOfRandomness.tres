@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://xjbdon1p68r3"]
+
+[ext_resource type="Texture2D" uid="uid://rhi0648sbrxk" path="res://sprite/bofOfRandomness.png" id="1_tchca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp76y"]
+atlas = ExtResource("1_tchca")
+region = Rect2(0, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyvr0"]
+atlas = ExtResource("1_tchca")
+region = Rect2(12, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkrj2"]
+atlas = ExtResource("1_tchca")
+region = Rect2(24, 0, 12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enb0j"]
+atlas = ExtResource("1_tchca")
+region = Rect2(0, 20, 12, 20)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp76y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyvr0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkrj2")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_enb0j")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]

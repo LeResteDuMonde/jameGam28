@@ -6,7 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ss08y"]
 
 [node name="Dragable" type="StaticBody2D"]
-position = Vector2(-37, -5)
 script = ExtResource("1_hnm3r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

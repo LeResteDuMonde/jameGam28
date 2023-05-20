@@ -31,5 +31,3 @@ shape = SubResource("CircleShape2D_jdywk")
 scale = Vector2(1.253, 1.253)
 shape = SubResource("CircleShape2D_jdywk")
 debug_color = Color(0.72549, 0.47451, 0.133333, 0.419608)
-
-[connection signal="area_shape_entered" from="Impact" to="." method="_on_impact_area_shape_entered"]

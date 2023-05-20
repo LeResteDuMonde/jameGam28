@@ -12,12 +12,13 @@ func _ready():
 	init()
 
 func _process(delta):
-	move(delta)aaa
+	move(delta)
 
 func init():
 	sprite = $Sprite2D
 	collisionShape = $CollisionShape2D
-	cursorManager = $"../CursorManager"
+	cursorManager = get_tree().root.get_child(0).get_node("CursorManager")
+	collisionShape.disabled = false
 
 func move(delta):
 	if selected: global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)

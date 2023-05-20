@@ -13,6 +13,7 @@ const MinVelocity = 1
 func _ready():
 	gameManager = $"../../GameManager"
 	Target = gameManager.Player
+#	Target = GameManager.getPlayer()
 	animation = $AnimatedSprite2D
 	animation.play("run")
 	
