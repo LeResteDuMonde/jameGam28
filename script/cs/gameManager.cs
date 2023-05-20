@@ -15,13 +15,4 @@ public partial class gameManager : Node
 		else
 			throw new InvalidOperationException("Only one instance of gameManager is allowed.");
 	}
-
-	// public static Node2D GetPlayer()
-	// {
-	// 	GD.Print(instance);
-	// 	if (instance != null)
-	// 		return instance.Player;
-	// 	else
-	// 		return null; // Handle the case when gameManager instance is not available
-	// }
 }
