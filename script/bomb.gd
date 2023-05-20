@@ -1,4 +1,4 @@
-extends dragable
+extesands dragable
 
 var timer = 2 #seconds
 var impact

@@ -12,7 +12,7 @@ func _ready():
 	init()
 
 func _process(delta):
-	move(delta)
+	move(delta)aaa
 
 func init():
 	sprite = $Sprite2D
