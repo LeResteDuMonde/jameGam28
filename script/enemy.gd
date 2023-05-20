@@ -9,8 +9,10 @@ const Deceleration = 800
 const MinVelocity = 1
 
 func _ready():
-	var gameManager = $"../GameManager"
+	var gameManager = $"../../GameManager"
 	Target = gameManager.Player
+	
+	findAndSetSpawnPosition()
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -32,3 +34,16 @@ func _physics_process(delta):
 
 	# set_velocity(velocity)
 	move_and_slide()
+
+#to find the spawn position for the enemy
+func findAndSetSpawnPosition():
+	
+	var boundaries = get_window().size
+	var minRadius = sqrt( boundaries.x**2+boundaries.y**2)  #/2 smhw wtf?
+	var radius = minRadius +  50 #approximate margine (could be calculated with width of monster
+	var angle = randf_range(0,2*PI)
+	
+	var pos = Vector2(cos(angle)*radius, sin(angle)*radius)
+	print_debug("new monster at position %d %d" % [pos.x,pos.y] ) 
+	transform.origin = pos
+	

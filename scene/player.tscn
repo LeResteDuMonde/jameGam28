@@ -7,10 +7,6 @@
 radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
-slide_on_ceiling = false
-floor_stop_on_slope = false
-floor_block_on_wall = false
-platform_on_leave = 2
 script = ExtResource("1_gbu76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
