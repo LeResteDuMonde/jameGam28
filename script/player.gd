@@ -5,6 +5,7 @@ const MaxSpeed = 50
 const Acceleration = 500
 const Deceleration = 800
 const MinVelocity = 1
+var pv = 3
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down").normalized()
@@ -37,5 +38,10 @@ func replacePayerInViewport():
 		velocity.y = viewport.y/2-transform.origin.y
 
 		
-	print(velocity)
+	#print(velocity)
+	
+	
+func loosePv():
+	pv-=1
+	print_debug("loose pv, current pv : %d"%pv)
 	
