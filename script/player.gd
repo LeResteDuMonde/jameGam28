@@ -30,12 +30,17 @@ func _physics_process(delta):
 	
 func replacePayerInViewport():
 	var viewport = get_viewport_rect().size
-	
-	if transform.origin.x>viewport.x/2  or transform.origin.x<-viewport.x/2:
-		velocity.x = viewport.x/2-transform.origin.x
+	var bounce = 30
+	if transform.origin.x<-viewport.x/2:
+		velocity.x = -viewport.x/2-transform.origin.x+bounce
+	if transform.origin.x>viewport.x/2 :
+		velocity.x = -viewport.x/2+transform.origin.x-bounce
 		
-	if transform.origin.y>viewport.y/2  or transform.origin.y<-viewport.y/2:
-		velocity.y = viewport.y/2-transform.origin.y
+	if transform.origin.y<-viewport.y/2:
+		velocity.y = -viewport.y/2-transform.origin.y+bounce
+	if transform.origin.y>viewport.x/2 :
+		velocity.y = -viewport.y/2+transform.origin.y-bounce
+		
 
 		
 	#print(velocity)

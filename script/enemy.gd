@@ -47,7 +47,7 @@ func findAndSetSpawnPosition():
 	var angle = randf_range(0,2*PI)
 	
 	var pos = Vector2(cos(angle)*radius, sin(angle)*radius)
-	#print_debug("new monster at position %d %d" % [pos.x,pos.y] ) 
+	print_debug("new monster at position %d %d" % [pos.x,pos.y] ) 
 	transform.origin = pos
 	
 func contactWithPlayer():
