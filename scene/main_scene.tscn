@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl0xgsbv0epj8"]
+[gd_scene load_steps=4 format=3 uid="uid://dl0xgsbv0epj8"]
 
 [ext_resource type="Script" path="res://script/gameManager.gd" id="1_pl1db"]
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="2_mfgby"]
 [ext_resource type="PackedScene" uid="uid://c0d1otlxk4y35" path="res://scene/enemy.tscn" id="3_dyi42"]
-[ext_resource type="Script" path="res://script/player.gd" id="3_m2waf"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,7 +14,6 @@ Player = NodePath("../Player")
 zoom = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("2_mfgby")]
-script = ExtResource("3_m2waf")
 
 [node name="Enemy" parent="." instance=ExtResource("3_dyi42")]
 

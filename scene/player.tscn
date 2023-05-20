@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh5vw02qqgf8r"]
 
-[ext_resource type="Script" path="res://script/cs/player.cs" id="1_0evjx"]
+[ext_resource type="Script" path="res://script/player.gd" id="1_gbu76"]
 [ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_e4odf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr17n"]
 radius = 60.0
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_0evjx")
+script = ExtResource("1_gbu76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_e4odf")
