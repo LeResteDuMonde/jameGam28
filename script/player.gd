@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-const Speed = 300.0
-const MaxSpeed = 500.0
-const Acceleration = 5000.0
-const Deceleration = 8000.0
-const MinVelocity = 10.0
+const Speed = 30
+const MaxSpeed = 50
+const Acceleration = 500
+const Deceleration = 800
+const MinVelocity = 1
 
 func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down").normalized()

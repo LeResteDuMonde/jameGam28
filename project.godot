@@ -15,6 +15,15 @@ run/main_scene="res://scene/main_scene.tscn"
 config/features=PackedStringArray("4.0", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=128
+window/size/viewport_height=128
+window/size/resizable=false
+window/size/window_width_override=768
+window/size/window_height_override=768
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Jame Gam #28"
@@ -46,3 +55,5 @@ right={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

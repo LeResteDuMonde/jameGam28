@@ -4,12 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://nm1jr5wpdjs5" path="res://icon.svg" id="2_e4odf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr17n"]
-radius = 60.0
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D"]
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+platform_on_leave = 2
 script = ExtResource("1_gbu76")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_e4odf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

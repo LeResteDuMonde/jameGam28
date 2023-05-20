@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 var Target
 
-const Speed = 200.0
-const MaxSpeed = 300.0
-const Acceleration = 5000.0
-const Deceleration = 8000.0
-const MinVelocity = 10.0
+const Speed = 20
+const MaxSpeed = 30
+const Acceleration = 500
+const Deceleration = 800
+const MinVelocity = 1
 
 func _ready():
 	var gameManager = $"../GameManager"

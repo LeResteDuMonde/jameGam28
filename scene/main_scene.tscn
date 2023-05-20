@@ -11,10 +11,10 @@ script = ExtResource("1_pl1db")
 Player = NodePath("../Player")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
 
 [node name="Player" parent="." instance=ExtResource("2_mfgby")]
 
 [node name="Enemy" parent="." instance=ExtResource("3_dyi42")]
+position = Vector2(39, 0)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
