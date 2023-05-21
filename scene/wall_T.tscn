@@ -1,16 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnl8vdibyji22"]
+[gd_scene load_steps=4 format=3 uid="uid://0gj6c7ljqkr0"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_jl467"]
-[ext_resource type="Shape2D" path="res://shape/wall_T.tres" id="2_xebid"]
+[ext_resource type="Shape2D" uid="uid://bac8qqj5al8u0" path="res://shape/wall_T.tres" id="2_xebid"]
 [ext_resource type="Texture2D" uid="uid://dfsl6nprho0wd" path="res://sprite/wall_T.png" id="3_ggy53"]
 
 [node name="Wall_T" instance=ExtResource("1_jl467")]
+input_pickable = true
+gravity_scale = 0.0
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Area2DCollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 shape = ExtResource("2_xebid")
+debug_color = Color(0.580392, 0.552941, 0, 0.419608)
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("3_ggy53")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+[node name="Area2DCollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = ExtResource("2_xebid")
+debug_color = Color(0.580392, 0.552941, 0, 0.419608)
