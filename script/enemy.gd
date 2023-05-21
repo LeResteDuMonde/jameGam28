@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 var Target
 var gameManager
@@ -60,4 +61,7 @@ func findAndSetSpawnPosition():
 	transform.origin = pos
 	
 func contactWithPlayer():
-	Target.instance.loosePv()	
+	Target.instance.loosePv()
+	
+func damage():
+	queue_free()

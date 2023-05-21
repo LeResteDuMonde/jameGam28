@@ -27,9 +27,6 @@ position = Vector2(1, 2)
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("3_fe2lc")
 
-[node name="Bomb" parent="." instance=ExtResource("4_kmlps")]
-position = Vector2(40, 49)
-
 [node name="CursorManager" type="Node" parent="."]
 script = ExtResource("6_0cxh7")
 
@@ -40,6 +37,9 @@ script = ExtResource("6_dnorm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BoxOfRandomness"]
 sprite_frames = ExtResource("7_u3x1d")
 animation = &"open"
+
+[node name="Bomb" parent="BoxOfRandomness" instance=ExtResource("4_kmlps")]
+position = Vector2(-52, -1)
 
 [node name="Conveyer" type="Node2D" parent="."]
 z_index = -10

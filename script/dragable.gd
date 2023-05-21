@@ -21,6 +21,7 @@ func init():
 	collisionShape.disabled = false
 
 func move(delta):
+	selected
 	if selected: global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

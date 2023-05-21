@@ -14,8 +14,13 @@ func _process(delta):
 	if current > nextSpawn:
 		animation.play("open")
 		var b = bomb.instantiate()
-		b.global_position = global_position + Vector2(-15,0)
-		get_tree().get_root().add_child(b)
+#		get_node("../").add_child(b)
+		
+		add_child(b)
+#		b.global_position = global_position + Vector2(-15,0)
+		b.position = Vector2(-15,0)
+#		
+		
 		nextSpawn = current + spawnTime(current,get_child_count())
 	pass
 

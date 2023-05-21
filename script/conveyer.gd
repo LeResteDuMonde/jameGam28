@@ -12,7 +12,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var nodes = area.get_overlapping_bodies()
-#	print(nodes.size)
+#	print(nodes)
 	for n in nodes:
 		# print(n.name)
 		if(n.position != null): 

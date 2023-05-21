@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://bgglwrcv4i76y" path="res://animation/player.tres" id="2_u8ixx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr17n"]
-radius = 6.0
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gbu76")
