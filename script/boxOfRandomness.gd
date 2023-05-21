@@ -4,6 +4,7 @@ var nextSpawn=0
 var bomb
 var walls
 var animation
+var tmp = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation = $AnimatedSprite2D
@@ -27,7 +28,8 @@ func _process(delta):
 #		b.global_position = global_position + Vector2(-15,0)
 		d.position = Vector2(-15,0)
 #		
-		
+	
+		#b.apply_impulse(Vector2(0,-15))
 		nextSpawn = current + spawnTime(current,get_child_count())
 	pass
 

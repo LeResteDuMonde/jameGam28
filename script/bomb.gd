@@ -5,13 +5,13 @@ var explosion
 var hasExploded = false
 
 func _ready():
-	init()
+	super._ready()
 	explosion =  load("res://scene/explosion.tscn")
 	
 func _process(delta):
-	move(delta)
+	super._process(delta)
 	
-	if(active): timer -= delta	
+	if(active): timer -= delta
 	if timer < 0 and hasExploded == false :
 		explode()
 	

@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://clmj31dgimlse"]
+[gd_scene load_steps=5 format=3 uid="uid://clmj31dgimlse"]
 
-[ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_8pq72"]
 [ext_resource type="Script" path="res://script/bomb.gd" id="2_b124x"]
 [ext_resource type="Texture2D" uid="uid://cbosajbancdds" path="res://sprite/bomb.png" id="3_ob7i2"]
 
@@ -10,17 +9,20 @@ radius = 5.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdywk"]
 radius = 20.63
 
-[node name="Bomb" instance=ExtResource("1_8pq72")]
+[node name="Bomb" type="RigidBody2D"]
+input_pickable = true
+gravity_scale = 0.0
 script = ExtResource("2_b124x")
 
-[node name="CollisionShape2D" parent="." index="0"]
-scale = Vector2(1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_13tcu")
 debug_color = Color(0.913725, 0, 0.713726, 0.419608)
 
-[node name="Sprite2D" parent="." index="1"]
-scale = Vector2(1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_ob7i2")
 
-[node name="CollisionShape2D" parent="Area2D" index="0"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.253, 1.253)
 shape = SubResource("CircleShape2D_jdywk")

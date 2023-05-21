@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RigidBody2D
 class_name dragable
 
 var sprite
@@ -9,6 +9,7 @@ var active = false
 
 func _ready():
 	init()
+	print_debug("bomb created")
 
 func _process(delta):
 	move(delta)
@@ -17,15 +18,22 @@ func init():
 	sprite = $Sprite2D
 	collisionShape = $CollisionShape2D
 	collisionShape.disabled = false
-
+	input_event.connect(m_input_event)
+	
+func test(a,b,c):
+		print_debug("input_event")
+	
 func move(delta):
-	selected
-	if selected: global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
+	if selected: 
+		print_debug("move")
+		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
+	return
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func m_input_event(viewport, event, shape_idx):
+	print_debug("input event")
 	if Input.is_action_just_pressed("click") && !CM.selecting:
 		select()
-	else: if Input.is_action_just_released("click") && selected:
+	elif Input.is_action_just_released("click") && selected:
 		unselect()
 		
 func select():
