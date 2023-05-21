@@ -12,7 +12,7 @@ const MinVelocity = 1
 var hasInflictedDamage = false
 
 func _ready():
-	gameManager = $"../../GameManager"
+	gameManager = GM
 	Target = GM.Player
 #	Target = GameManager.getPlayer()
 	animation = $AnimatedSprite2D
