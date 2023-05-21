@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci3ljntalbl0c"]
+
+[ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_460mh"]
+[ext_resource type="Texture2D" uid="uid://cytbttge1w77b" path="res://sprite/wall_L.png" id="2_nxxki"]
+[ext_resource type="Shape2D" uid="uid://counwgmxi3c4g" path="res://shape/wall_L.tres" id="3_ptxcb"]
+
+[sub_resource type="ConcavePolygonShape2D" id="ConcavePolygonShape2D_5vcsa"]
+
+[node name="Wall_L" instance=ExtResource("1_460mh")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("ConcavePolygonShape2D_5vcsa")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_nxxki")
+
+[node name="Area2D" parent="." index="2"]
+position = Vector2(-6, 4)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-6, -4)
+shape = ExtResource("3_ptxcb")
+disabled = true

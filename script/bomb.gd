@@ -3,6 +3,7 @@ extends dragable
 var timer = 2 #seconds
 var explosion
 var hasExploded = false
+
 func _ready():
 	init()
 	explosion =  load("res://scene/explosion.tscn")

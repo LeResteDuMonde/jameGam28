@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf2jqp0c64u6i"]
+
+[ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_w0l1o"]
+[ext_resource type="Texture2D" uid="uid://doyxfbjlbfkmx" path="res://sprite/wall_Is.png" id="2_kynv4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhbls"]
+size = Vector2(5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4noc"]
+size = Vector2(6.84262, 15.6403)
+
+[node name="Wall_Is" instance=ExtResource("1_w0l1o")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.5, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hhbls")
+debug_color = Color(0.423529, 0.6, 0.141176, 0.419608)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_kynv4")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(1, 2.84217e-14)
+scale = Vector2(1.023, 1.023)
+shape = SubResource("RectangleShape2D_a4noc")
