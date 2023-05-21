@@ -7,8 +7,11 @@ const Acceleration = 500
 const Deceleration = 800
 const MinVelocity = 1
 var pv = 3
+var gameManager
 
 func _ready():
+	
+	gameManager = $"../GameManager"
 	animation = $AnimatedSprite2D
 	animation.play("default")
 	
@@ -63,4 +66,6 @@ func damage():
 func loosePv():
 	pv-=1
 	print_debug("loose pv, current pv : %d"%pv)
+	if pv <= 0:
+		gameManager.playerDies()
 	
