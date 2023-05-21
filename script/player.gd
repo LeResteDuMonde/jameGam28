@@ -57,9 +57,12 @@ func replacePayerInViewport():
 
 		
 	#print(velocity)
-	
+func damage():
+	loosePv()
 	
 func loosePv():
 	pv-=1
 	print_debug("loose pv, current pv : %d"%pv)
+	if pv <= 0:
+		GM.playerDies()
 	
