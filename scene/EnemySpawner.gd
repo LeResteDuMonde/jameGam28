@@ -4,7 +4,6 @@ var nextSpawn=0
 var enemy
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	enemy =  load("res://scene/enemy.tscn")
 	pass # Replace with function body.
 

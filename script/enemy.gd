@@ -13,7 +13,7 @@ var hasInflictedDamage = false
 
 func _ready():
 	gameManager = $"../../GameManager"
-	Target = gameManager.Player
+	Target = GM.Player
 #	Target = GameManager.getPlayer()
 	animation = $AnimatedSprite2D
 	animation.play("run")

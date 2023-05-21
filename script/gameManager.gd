@@ -1,7 +1,8 @@
 extends Node
 
-var instance
-@export var Player: Node2D
+var Player
+var root
 
 func _ready():
-	if instance == null: instance = self
+	root = get_tree().root
+	Player = root.get_node("Main/Player")
