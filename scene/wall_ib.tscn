@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbpbi1kojbtbc"]
+[gd_scene load_steps=4 format=3 uid="uid://cj63tgchv1uur"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_vo5x5"]
 [ext_resource type="Shape2D" uid="uid://cl8cabq8hi3sv" path="res://shape/wall_Ib.tres" id="2_tdqix"]
@@ -7,6 +7,9 @@
 [node name="wall_Ib" instance=ExtResource("1_vo5x5")]
 input_pickable = true
 gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_boprs")
