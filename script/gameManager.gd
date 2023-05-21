@@ -9,14 +9,15 @@ var gameOverSprite
 func _ready():
 	root = get_tree().root
 	main = root.get_node("Main")
+	start()
+	
+func start():
 	Player = main.get_node("Player")
 	gameOverSprite = main.get_node("GameOver")
-	
 	AM.play("start")
 
 func playerDies():
 	AM.play("gameover")
-#	print_debug("player is dead")
 	Player.queue_free()
 	gameOverSprite.visible = true
 
@@ -28,3 +29,4 @@ func _input(event):
 		main.queue_free()
 		main = main_r.instantiate()
 		root.add_child(main)
+		start()

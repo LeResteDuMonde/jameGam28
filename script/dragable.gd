@@ -9,7 +9,7 @@ var active = false
 
 func _ready():
 	init()
-	print_debug("bomb created")
+#	print_debug("bomb created")
 
 func _process(delta):
 	move(delta)
@@ -25,14 +25,14 @@ func test(a,b,c):
 	
 func move(delta):
 	if selected: 
-		print_debug("move")
+#		print_debug("move")
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 		if !CM.selecting :
 			unselect()
 	return
 
 func m_input_event(viewport, event, shape_idx):
-	print_debug("input event")
+#	print_debug("input event")
 	if Input.is_action_just_pressed("click") && !CM.selecting:
 		select()
 	
