@@ -1,15 +1,15 @@
 extends CharacterBody2D
 class_name Enemy
 
-var Target
+var Target : ThePlayer
 var gameManager
 var animation
-
 const Speed = 20
 const MaxSpeed = 30
 const Acceleration = 500
 const Deceleration = 800
 const MinVelocity = 1
+var hasInflictedDamage = false
 
 func _ready():
 	gameManager = $"../../GameManager"
@@ -41,6 +41,11 @@ func _physics_process(delta):
 	
 	rotateAnimation(direction)
 	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "Player":
+			contactWithPlayer()
+			damage()
 	
 func rotateAnimation(direction):
 	var rotation = Vector2(-direction[1],direction[0]).angle()
@@ -61,7 +66,9 @@ func findAndSetSpawnPosition():
 	transform.origin = pos
 	
 func contactWithPlayer():
-	Target.instance.loosePv()
+	if not hasInflictedDamage:
+		Target.loosePv()
+		hasInflictedDamage = true
 	
 func damage():
 	queue_free()

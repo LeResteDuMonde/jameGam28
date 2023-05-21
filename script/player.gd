@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name ThePlayer
 var animation
 
 const Speed = 30
