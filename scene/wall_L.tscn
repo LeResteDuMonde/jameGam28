@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxb0ye836defa"]
+[gd_scene load_steps=5 format=3 uid="uid://bxb0ye836defa"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_460mh"]
 [ext_resource type="Texture2D" uid="uid://cytbttge1w77b" path="res://sprite/wall_L.png" id="2_nxxki"]
-[ext_resource type="Shape2D" uid="uid://counwgmxi3c4g" path="res://shape/wall_L.tres" id="3_ptxcb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vstw7"]
+size = Vector2(24, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flct2"]
+size = Vector2(5, 24)
 
 [node name="Wall_L" instance=ExtResource("1_460mh")]
 input_pickable = true
@@ -11,17 +16,15 @@ lock_rotation = true
 freeze = true
 freeze_mode = 1
 
-[node name="Area2DCollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-shape = ExtResource("3_ptxcb")
-disabled = true
-debug_color = Color(0.580392, 0.552941, 0, 0.419608)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_vstw7")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-9.5, 0)
+shape = SubResource("RectangleShape2D_flct2")
 
 [node name="Sprite2D" parent="." index="2"]
 texture = ExtResource("2_nxxki")
 
 [node name="Area2D" type="Area2D" parent="." index="3"]
-
-[node name="Area2DCollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-shape = ExtResource("3_ptxcb")
-disabled = true
-debug_color = Color(0.580392, 0.552941, 0, 0.419608)
