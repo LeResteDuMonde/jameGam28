@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-var Target : ThePlayer
+var Target 
 var gameManager
 var animation
 const Speed = 20
