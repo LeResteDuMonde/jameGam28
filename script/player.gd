@@ -57,7 +57,8 @@ func replacePayerInViewport():
 
 		
 	#print(velocity)
-	
+func damage():
+	loosePv()
 	
 func loosePv():
 	pv-=1
