@@ -18,4 +18,7 @@ func _process(delta):
 
 #setup the difficulty here
 func spawnTime(timeFromBeginingOfGame, numberOfEnemy):
-	return 600*randf_range(5,15)#TODO make it evolve to make the game harder with time
+	var baseTime = 1000*randf_range(5,15)
+	var decrease = log(timeFromBeginingOfGame / 1000 + 1)
+	print(decrease)
+	return baseTime/decrease
