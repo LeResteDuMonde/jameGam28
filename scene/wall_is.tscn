@@ -1,15 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://byrly3cbc1crw"]
+[gd_scene load_steps=5 format=3 uid="uid://byrly3cbc1crw"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_w0l1o"]
 [ext_resource type="Texture2D" uid="uid://doyxfbjlbfkmx" path="res://sprite/wall_Is.png" id="2_kynv4"]
+[ext_resource type="Script" path="res://script/Wall.gd" id="2_papij"]
 [ext_resource type="Shape2D" uid="uid://mbr1eae8ypp8" path="res://shape/wall_Is.tres" id="3_2wrcu"]
 
-[node name="Wall_Is" instance=ExtResource("1_w0l1o")]
+[node name="Wall_Is" groups=["wall"] instance=ExtResource("1_w0l1o")]
 input_pickable = true
 gravity_scale = 0.0
 lock_rotation = true
 freeze = true
 freeze_mode = 1
+script = ExtResource("2_papij")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = ExtResource("3_2wrcu")

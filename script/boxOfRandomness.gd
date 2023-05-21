@@ -28,7 +28,7 @@ func _process(delta):
 		if r_int == 0 : d = bomb.instantiate()
 		else : 
 			d = walls.pick_random().instantiate()
-			var rotDeg = randi_range(0,360)
+			var rotDeg = randi_range(0,3)*90
 			var rotRad = deg_to_rad(rotDeg)
 			var rot = round(rotRad/ deg_to_rad(90)) * rotRad
 			d.rotation = rot
@@ -43,7 +43,7 @@ func _process(delta):
 
 #setup the difficulty here
 func spawnTime(timeFromBeginingOfGame, numberOfEnemy):
-	return 300*randf_range(5,15)#TODO make it evolve to make the game harder with time
+	return 0.3*1000*randf_range(5,15)#TODO make it evolve to make the game harder with time
 
 
 func _on_animated_sprite_2d_animation_finished():

@@ -43,9 +43,12 @@ func _physics_process(delta):
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_collider().name == "Player":
+		var collider = collision.get_collider()
+		if collider.name == "Player":
 			contactWithPlayer()
 			damage()
+		elif collider.is_in_group('wall'):
+			contactWithWall(collider,delta)
 	
 func rotateAnimation(direction):
 	var rotation = Vector2(-direction[1],direction[0]).angle()
@@ -69,6 +72,9 @@ func contactWithPlayer():
 	if not hasInflictedDamage:
 		Target.loosePv()
 		hasInflictedDamage = true
+		
+func contactWithWall(wall : Wall,delta):
+	wall.looseHp(delta)
 	
 func damage():
 	queue_free()
