@@ -1,7 +1,7 @@
 extends dragable
 class_name Wall
-var hp=100
-var looseHpSpeed = 50
+var hp= 200
+var looseHpSpeed = 100
 var label="wall"
 
 func looseHp(delta):
@@ -15,6 +15,7 @@ func _ready():
 
 func damage():
 	queue_free()
+	AM.play("wall",5)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	super._process(delta)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://u7447vh8xus8"]
+[gd_scene load_steps=12 format=3 uid="uid://msbghgf2khcv"]
 
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="1_hohmn"]
-[ext_resource type="Script" path="res://scene/EnemySpawner.gd" id="2_837ce"]
+[ext_resource type="Script" path="res://script/EnemySpawner.gd" id="2_fgyxn"]
 [ext_resource type="Script" path="res://script/boxOfRandomness.gd" id="3_14yfm"]
 [ext_resource type="SpriteFrames" uid="uid://xjbdon1p68r3" path="res://animation/boxOfRandomness.tres" id="4_qhqx1"]
 [ext_resource type="Script" path="res://script/conveyer.gd" id="5_sgple"]
@@ -9,6 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://bk6uu4rw5ni2q" path="res://audio/music.wav" id="7_dksea"]
 [ext_resource type="Texture2D" uid="uid://dfib6c1hil8ey" path="res://sprite/bg.png" id="8_0wddc"]
 [ext_resource type="Texture2D" uid="uid://bbukrkohv5pt0" path="res://sprite/gameOver.png" id="9_qqgjk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8qx3"]
+size = Vector2(12, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7a37"]
 size = Vector2(127, 24)
@@ -21,7 +24,7 @@ size = Vector2(127, 24)
 position = Vector2(1, 2)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
-script = ExtResource("2_837ce")
+script = ExtResource("2_fgyxn")
 
 [node name="BoxOfRandomness" type="Node2D" parent="."]
 position = Vector2(56, 52)
@@ -30,6 +33,11 @@ script = ExtResource("3_14yfm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BoxOfRandomness"]
 sprite_frames = ExtResource("4_qhqx1")
 animation = &"open"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BoxOfRandomness"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxOfRandomness/StaticBody2D"]
+shape = SubResource("RectangleShape2D_c8qx3")
 
 [node name="Conveyer" type="Node2D" parent="."]
 z_index = -10

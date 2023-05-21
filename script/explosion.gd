@@ -25,6 +25,7 @@ func check_area():
 		if(n.has_method("damage")): n.damage()
 	
 func explode():
+	AM.play("explosion")
 	animation.play("default")
 
 func _on_animation_animation_finished():

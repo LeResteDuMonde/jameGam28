@@ -11,9 +11,12 @@ func _ready():
 	main = root.get_node("Main")
 	Player = main.get_node("Player")
 	gameOverSprite = main.get_node("GameOver")
+	
+	AM.play("start")
 
 func playerDies():
-	print_debug("player is dead")
+	AM.play("gameover")
+#	print_debug("player is dead")
 	Player.queue_free()
 	gameOverSprite.visible = true
 

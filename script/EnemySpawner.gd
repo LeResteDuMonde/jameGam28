@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var current = Time.get_ticks_msec()
 	if current>nextSpawn:
 		add_child(enemy.instantiate())
@@ -17,8 +17,8 @@ func _process(delta):
 	pass
 
 #setup the difficulty here
-func spawnTime(timeFromBeginingOfGame, numberOfEnemy):
+func spawnTime(timeFromBeginingOfGame, _numberOfEnemy):
 	var baseTime = 1000*randf_range(5,15)
 	var decrease = log(timeFromBeginingOfGame / 1000 + 1)
-	print(decrease)
+#	print(decrease)
 	return baseTime/decrease
