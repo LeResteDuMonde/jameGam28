@@ -2,14 +2,20 @@ extends Node2D
 
 var nextSpawn=0
 var bomb
-var walls
+var walls = []
 var animation
 var tmp = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation = $AnimatedSprite2D
 	bomb = load("res://scene/bomb.tscn")
-	walls = [load("res://scene/wall_is.tscn")]
+	
+	var wallTypes = ["is","ib","L","T"]
+
+	for t in wallTypes:
+		walls.append(load("res://scene/wall_"+t+".tscn"))
+	
+	print(walls)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -20,9 +26,9 @@ func _process(delta):
 		var r_int = randi_range(0,2)
 		var d 
 		if r_int == 0 : d = bomb.instantiate()
-		else : d = walls[0].instantiate()
-			
-#		get_node("../").add_child(b)
+		else : 
+			d = walls.pick_random().instantiate()
+			var rot = round(randi_range(0,360) / deg_to_rad(90)) * randi_range(0,360)
 		
 		add_child(d)
 #		b.global_position = global_position + Vector2(-15,0)
