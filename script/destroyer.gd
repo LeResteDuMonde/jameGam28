@@ -1,0 +1,8 @@
+extends Area2D
+
+func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	print()
+
+
+func _on_body_entered(body):
+	body.queue_free()

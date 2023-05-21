@@ -65,4 +65,3 @@ func loosePv():
 	print_debug("loose pv, current pv : %d"%pv)
 	if pv <= 0:
 		GM.playerDies()
-	

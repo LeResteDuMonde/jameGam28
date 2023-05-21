@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://msbghgf2khcv"]
+[gd_scene load_steps=14 format=3 uid="uid://msbghgf2khcv"]
 
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="1_hohmn"]
 [ext_resource type="Script" path="res://script/EnemySpawner.gd" id="2_fgyxn"]
@@ -9,12 +9,16 @@
 [ext_resource type="AudioStream" uid="uid://bk6uu4rw5ni2q" path="res://audio/music.wav" id="7_dksea"]
 [ext_resource type="Texture2D" uid="uid://dfib6c1hil8ey" path="res://sprite/bg.png" id="8_0wddc"]
 [ext_resource type="Texture2D" uid="uid://bbukrkohv5pt0" path="res://sprite/gameOver.png" id="9_qqgjk"]
+[ext_resource type="Script" path="res://script/destroyer.gd" id="10_vpf5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8qx3"]
 size = Vector2(12, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7a37"]
-size = Vector2(127, 24)
+size = Vector2(167, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdth"]
+size = Vector2(28, 51)
 
 [node name="Main" type="Node2D"]
 
@@ -47,7 +51,7 @@ script = ExtResource("5_sgple")
 [node name="Area2D" type="Area2D" parent="Conveyer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyer/Area2D"]
-position = Vector2(0.5, 0)
+position = Vector2(-19.5, 0)
 shape = SubResource("RectangleShape2D_r7a37")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Conveyer"]
@@ -68,4 +72,13 @@ z_index = -5
 position = Vector2(1, -3)
 texture = ExtResource("9_qqgjk")
 
+[node name="Destroyer" type="Area2D" parent="."]
+position = Vector2(-116, 53)
+script = ExtResource("10_vpf5n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destroyer"]
+position = Vector2(6, -1)
+shape = SubResource("RectangleShape2D_xrdth")
+
 [connection signal="animation_finished" from="BoxOfRandomness/AnimatedSprite2D" to="BoxOfRandomness" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Destroyer" to="Destroyer" method="_on_body_entered"]
