@@ -1,6 +1,6 @@
 extends dragable
 class_name Wall
-var hp= 200
+var hp= 2000
 var looseHpSpeed = 100
 var label="wall"
 

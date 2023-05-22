@@ -15,7 +15,7 @@ func _process(delta):
 	move(delta)
 
 func init():
-	sprite = $Sprite2D
+	sprite = $Sprite
 	collisionShape = $CollisionShape2D
 	collisionShape.disabled = false
 	input_event.connect(m_input_event)

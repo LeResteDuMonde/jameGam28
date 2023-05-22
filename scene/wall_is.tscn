@@ -14,7 +14,7 @@ freeze_mode = 1
 [node name="CollisionShape2D" parent="." index="0"]
 shape = ExtResource("3_2wrcu")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource("2_kynv4")
 
 [node name="Area2D" type="Area2D" parent="." index="2"]

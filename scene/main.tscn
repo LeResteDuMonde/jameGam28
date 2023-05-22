@@ -51,7 +51,7 @@ script = ExtResource("5_sgple")
 [node name="Area2D" type="Area2D" parent="Conveyer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyer/Area2D"]
-position = Vector2(-19.5, 0)
+position = Vector2(-19, 0)
 shape = SubResource("RectangleShape2D_r7a37")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Conveyer"]

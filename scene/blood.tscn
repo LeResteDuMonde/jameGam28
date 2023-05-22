@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://csqs4wol2lcnd"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tk4wy"]
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 17.62
+flatness = 0.13
+gravity = Vector3(0, 0, 0)
+color = Color(0.533333, 0, 0, 1)
+hue_variation_min = -0.05
+hue_variation_max = 0.04
+turbulence_noise_strength = 2.85
+anim_speed_min = -0.64
+anim_speed_max = 16.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xuw83"]
+
+[node name="Blood" type="GPUParticles2D"]
+z_index = -1
+position = Vector2(-31, -22)
+amount = 360
+process_material = SubResource("ParticleProcessMaterial_tk4wy")
+texture = SubResource("CanvasTexture_xuw83")
+lifetime = 600.0
+one_shot = true
+explosiveness = 0.99
+collision_base_size = 8.93

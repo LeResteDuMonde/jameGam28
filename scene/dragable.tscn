@@ -13,5 +13,5 @@ script = ExtResource("1_hnm3r")
 shape = SubResource("RectangleShape2D_ss08y")
 debug_color = Color(0.580392, 0.552941, 0, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_fjimv")

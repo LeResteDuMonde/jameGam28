@@ -11,6 +11,8 @@ const Deceleration = 800
 const MinVelocity = 1
 var hasInflictedDamage = false
 
+const blood_r = preload("res://scene/zombie_blood.tscn")
+
 func _ready():
 	gameManager = GM
 	Target = GM.Player
@@ -78,4 +80,10 @@ func contactWithWall(wall : Wall,delta):
 	
 func damage():
 	AM.play("hit",7)
+	var b = blood_r.instantiate()
+	print(b)
+	b.global_position = global_position
+	b.emitting = true
+	GM.main.add_child(b)
+
 	queue_free()

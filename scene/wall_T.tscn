@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://0gj6c7ljqkr0"]
+[gd_scene load_steps=6 format=3 uid="uid://0gj6c7ljqkr0"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_jl467"]
 [ext_resource type="Script" path="res://script/Wall.gd" id="2_btbki"]
 [ext_resource type="Texture2D" uid="uid://dfsl6nprho0wd" path="res://sprite/wall_T.png" id="3_ggy53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpodq"]
+size = Vector2(5, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxekw"]
 size = Vector2(15, 5)
@@ -17,8 +20,9 @@ script = ExtResource("2_btbki")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_fpodq")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource("3_ggy53")
 
 [node name="Area2D" type="Area2D" parent="." index="2"]

@@ -17,7 +17,7 @@ script = ExtResource("2_13pj1")
 position = Vector2(0.25, 0)
 shape = ExtResource("2_tdqix")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite" parent="." index="1"]
 texture = ExtResource("3_boprs")
 
 [node name="Area2D" type="Area2D" parent="." index="2"]

@@ -15,8 +15,8 @@ func _process(delta):
 		check_area()
 	hasInflictedDamage += 1
 
-
-	
+func activate():
+	print("act")
 	
 func check_area():
 	var nodes = impact.get_overlapping_bodies()
