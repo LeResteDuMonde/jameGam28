@@ -11,6 +11,9 @@ const Deceleration = 800
 const MinVelocity = 1
 var hasInflictedDamage = false
 
+var hp= 1000
+var looseHpSpeed = 100
+
 const blood_r = preload("res://scene/zombie_blood.tscn")
 
 func _ready():
@@ -77,8 +80,15 @@ func contactWithPlayer():
 		
 func contactWithWall(wall : Wall,delta,pos):
 	wall.looseHp(delta,pos)
+	looseHp(delta)
 	
 func damage():
 	AM.play("hit",7)
 	PM.play(blood_r,global_position)
 	queue_free()
+	
+func looseHp(delta):
+#	print_debug("loose hp, current hp :  %d"% hp)
+	hp-=delta*looseHpSpeed
+	if hp<0:
+		damage()

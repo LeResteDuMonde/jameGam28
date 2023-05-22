@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://msbghgf2khcv"]
+[gd_scene load_steps=19 format=3 uid="uid://dlxc307n5a6t0"]
 
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="1_hohmn"]
 [ext_resource type="Script" path="res://script/EnemySpawner.gd" id="2_fgyxn"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://script/destroyer.gd" id="10_vpf5n"]
 [ext_resource type="FontFile" uid="uid://dg6hh8dcbdyaf" path="res://font/Hypewriter.ttf" id="11_gnmyw"]
 [ext_resource type="Script" path="res://script/timer.gd" id="11_hkr5m"]
+[ext_resource type="Texture2D" uid="uid://b4383xlp7cpg3" path="res://sprite/cursor.png" id="13_kkfao"]
+[ext_resource type="Script" path="res://script/cs/cursor.gd" id="14_1wr6j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8qx3"]
 size = Vector2(12, 20)
@@ -97,6 +99,15 @@ grow_horizontal = 2
 text = "00:00"
 label_settings = SubResource("LabelSettings_ph88y")
 script = ExtResource("11_hkr5m")
+
+[node name="Cursor" type="Node2D" parent="."]
+z_index = 100
+position = Vector2(-25, -1)
+script = ExtResource("14_1wr6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
+position = Vector2(3, 3)
+texture = ExtResource("13_kkfao")
 
 [connection signal="animation_finished" from="BoxOfRandomness/AnimatedSprite2D" to="BoxOfRandomness" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Destroyer" to="Destroyer" method="_on_body_entered"]

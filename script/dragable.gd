@@ -26,7 +26,7 @@ func test(a,b,c):
 func move(delta):
 	if selected: 
 #		print_debug("move")
-		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
+		global_position = lerp(global_position, get_global_mouse_position(), 15 * delta)
 		if !CM.selecting :
 			unselect()
 	return

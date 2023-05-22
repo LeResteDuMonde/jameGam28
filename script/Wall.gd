@@ -7,7 +7,7 @@ var particules = preload("res://scene/wallShatter.tscn")
 
 
 func looseHp(delta,pos):
-	print_debug("loose hp, current hp :  %d"% hp)
+#	print_debug("loose hp, current hp :  %d"% hp)
 	hp-=delta*looseHpSpeed
 	PM.play(particules,pos)
 	if hp<0:
