@@ -11,7 +11,7 @@ const Deceleration = 800
 const MinVelocity = 1
 var hasInflictedDamage = false
 
-var hp= 1000
+var hp= 700
 var looseHpSpeed = 100
 
 const blood_r = preload("res://scene/zombie_blood.tscn")

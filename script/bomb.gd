@@ -4,7 +4,7 @@ var timer = 2 #seconds
 var explosion
 var hasExploded = false
 var animation
-var activated = false
+#var activated = false
 
 func _ready():
 	super._ready()

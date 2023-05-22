@@ -17,6 +17,7 @@ func _ready():
 func start():
 	Player = main.get_node("Player")
 	gameOverSprite = main.get_node("GameOver")
+	AM.clear()
 	AM.play("start")
 	gameOver = false
 

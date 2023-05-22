@@ -17,3 +17,8 @@ func play(clip_name, count = 0):
 	
 #	print(clip)
 	s.play_clip(clip)
+	
+func clear():
+	for n in get_children():
+		remove_child(n)
+		n.queue_free()

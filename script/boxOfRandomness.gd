@@ -1,14 +1,16 @@
 extends Node2D
 
-var nextSpawn=0
-var bomb
+var nextSpawn
+var bomb = preload("res://scene/bomb.tscn")
 var walls = []
 var animation
 var tmp = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	nextSpawn = Time.get_ticks_msec() + 1000
 	animation = $AnimatedSprite2D
-	bomb = load("res://scene/bomb.tscn")
+	animation.play("default")
 	
 	var wallTypes = ["is","ib","L","T"]
 
@@ -42,8 +44,11 @@ func spawnItem(time):
 	
 #setup the difficulty here
 func spawnTime(timeFromBeginingOfGame, numberOfEnemy):
-	return 1000*randf_range(5,15)*0.3#TODO make it evolve to make the game harder with time
-
+#	return 1000*randf_range(5,15)*0.4#TODO make it evolve to make the game harder with time
+	var baseTime = 1000 * randf_range(8,15)
+	var decrease = log(timeFromBeginingOfGame / 1000 + 1.1)
+#	print(decrease)
+	return baseTime/decrease
 
 func _on_animated_sprite_2d_animation_finished():
 	animation.play("default")

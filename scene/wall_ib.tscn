@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj63tgchv1uur"]
+[gd_scene load_steps=5 format=3 uid="uid://bn7aarw7ilh0q"]
 
 [ext_resource type="PackedScene" uid="uid://b8biq4cqelswl" path="res://scene/dragable.tscn" id="1_vo5x5"]
-[ext_resource type="Script" path="res://script/Wall.gd" id="2_13pj1"]
+[ext_resource type="Script" path="res://script/wall.gd" id="2_lxiab"]
 [ext_resource type="Shape2D" uid="uid://cl8cabq8hi3sv" path="res://shape/wall_Ib.tres" id="2_tdqix"]
 [ext_resource type="Texture2D" uid="uid://ddlwh8kc7ng65" path="res://sprite/wall_Ib.png" id="3_boprs"]
 
@@ -11,7 +11,7 @@ gravity_scale = 0.0
 lock_rotation = true
 freeze = true
 freeze_mode = 1
-script = ExtResource("2_13pj1")
+script = ExtResource("2_lxiab")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0.25, 0)

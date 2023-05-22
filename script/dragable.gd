@@ -6,6 +6,7 @@ var collisionShape
 
 var selected = false
 var active = false
+var activated = false
 
 func _ready():
 	init()
@@ -33,7 +34,7 @@ func move(delta):
 
 func m_input_event(viewport, event, shape_idx):
 #	print_debug("input event")
-	if Input.is_action_just_pressed("click") && !CM.selecting:
+	if Input.is_action_just_pressed("click") && !CM.selecting && !activated:
 		select()
 	
 		

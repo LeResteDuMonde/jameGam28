@@ -10,5 +10,5 @@ func play(particules,pos):
 	GM.main.add_child(p)
 	
 	await get_tree().create_timer(p.lifetime).timeout
-	p.queue_free()
+	if(p != null): p.queue_free()
 	

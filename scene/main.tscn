@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlxc307n5a6t0"]
+[gd_scene load_steps=19 format=3 uid="uid://c0w02ivm38iu0"]
 
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="1_hohmn"]
-[ext_resource type="Script" path="res://script/EnemySpawner.gd" id="2_fgyxn"]
+[ext_resource type="Script" path="res://script/enemySpawner.gd" id="2_1a0yn"]
 [ext_resource type="Script" path="res://script/boxOfRandomness.gd" id="3_14yfm"]
 [ext_resource type="SpriteFrames" uid="uid://xjbdon1p68r3" path="res://animation/boxOfRandomness.tres" id="4_qhqx1"]
 [ext_resource type="Script" path="res://script/conveyer.gd" id="5_sgple"]
@@ -36,7 +36,7 @@ outline_size = 1
 position = Vector2(1, 2)
 
 [node name="EnemySpawner" type="Node2D" parent="."]
-script = ExtResource("2_fgyxn")
+script = ExtResource("2_1a0yn")
 
 [node name="BoxOfRandomness" type="Node2D" parent="."]
 position = Vector2(56, 52)
