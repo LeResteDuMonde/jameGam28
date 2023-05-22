@@ -50,7 +50,7 @@ func _physics_process(delta):
 			contactWithPlayer()
 			damage()
 		elif collider.is_in_group('wall'):
-			contactWithWall(collider,delta)
+			contactWithWall(collider,delta,collision.get_position())
 	
 func rotateAnimation(direction):
 	var rotation = Vector2(-direction[1],direction[0]).angle()
@@ -72,18 +72,13 @@ func findAndSetSpawnPosition():
 	
 func contactWithPlayer():
 	if not hasInflictedDamage:
-		Target.loosePv()
+		Target.damage()
 		hasInflictedDamage = true
 		
-func contactWithWall(wall : Wall,delta):
-	wall.looseHp(delta)
+func contactWithWall(wall : Wall,delta,pos):
+	wall.looseHp(delta,pos)
 	
 func damage():
 	AM.play("hit",7)
-	var b = blood_r.instantiate()
-	print(b)
-	b.global_position = global_position
-	b.emitting = true
-	GM.main.add_child(b)
-
+	PM.play(blood_r,global_position)
 	queue_free()

@@ -5,6 +5,7 @@ var root
 var main
 var main_r = preload("res://scene/main.tscn")
 var gameOverSprite
+var gameOver = false
 
 func _ready():
 	root = get_tree().root
@@ -17,6 +18,7 @@ func start():
 	AM.play("start")
 
 func playerDies():
+	gameOver = true
 	AM.play("gameover")
 	Player.queue_free()
 	gameOverSprite.visible = true

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1qftlsyil3xh"]
+
+[ext_resource type="Material" uid="uid://10pgx0sve4ng" path="res://particles/wall.tres" id="1_xplam"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xuw83"]
+
+[node name="wallShatter" type="GPUParticles2D"]
+z_index = -6
+position = Vector2(-31, -22)
+emitting = false
+amount = 5
+process_material = ExtResource("1_xplam")
+texture = SubResource("CanvasTexture_xuw83")
+one_shot = true
+collision_base_size = 8.93

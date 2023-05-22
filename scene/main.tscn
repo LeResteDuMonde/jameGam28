@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://msbghgf2khcv"]
+[gd_scene load_steps=17 format=3 uid="uid://msbghgf2khcv"]
 
 [ext_resource type="PackedScene" uid="uid://dh5vw02qqgf8r" path="res://scene/player.tscn" id="1_hohmn"]
 [ext_resource type="Script" path="res://script/EnemySpawner.gd" id="2_fgyxn"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dfib6c1hil8ey" path="res://sprite/bg.png" id="8_0wddc"]
 [ext_resource type="Texture2D" uid="uid://bbukrkohv5pt0" path="res://sprite/gameOver.png" id="9_qqgjk"]
 [ext_resource type="Script" path="res://script/destroyer.gd" id="10_vpf5n"]
+[ext_resource type="FontFile" uid="uid://dg6hh8dcbdyaf" path="res://font/Hypewriter.ttf" id="11_gnmyw"]
+[ext_resource type="Script" path="res://script/timer.gd" id="11_hkr5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8qx3"]
 size = Vector2(12, 20)
@@ -19,6 +21,10 @@ size = Vector2(167, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrdth"]
 size = Vector2(28, 51)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ph88y"]
+font = ExtResource("11_gnmyw")
+outline_size = 1
 
 [node name="Main" type="Node2D"]
 
@@ -79,6 +85,18 @@ script = ExtResource("10_vpf5n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Destroyer"]
 position = Vector2(6, -1)
 shape = SubResource("RectangleShape2D_xrdth")
+
+[node name="Timer" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = -63.0
+offset_right = 21.0
+offset_bottom = -37.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_ph88y")
+script = ExtResource("11_hkr5m")
 
 [connection signal="animation_finished" from="BoxOfRandomness/AnimatedSprite2D" to="BoxOfRandomness" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Destroyer" to="Destroyer" method="_on_body_entered"]

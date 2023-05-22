@@ -59,11 +59,12 @@ func replacePayerInViewport():
 		
 	#print(velocity)
 func damage():
-	var b = blood_r.instantiate()
-	print(b)
-	b.global_position = global_position
-	b.emitting = true
-	GM.main.add_child(b)
+	PM.play(blood_r,global_position)
+#	var b = blood_r.instantiate()
+#	print(b)
+#	b.global_position = global_position
+#	b.emitting = true
+#	GM.main.add_child(b)
 	loosePv()
 	
 func loosePv():

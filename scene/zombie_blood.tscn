@@ -15,12 +15,12 @@ anim_speed_max = 16.0
 [sub_resource type="CanvasTexture" id="CanvasTexture_xuw83"]
 
 [node name="Blood" type="GPUParticles2D"]
-z_index = -1
+z_index = -6
 position = Vector2(-31, -22)
-amount = 360
+amount = 15
 process_material = SubResource("ParticleProcessMaterial_tk4wy")
 texture = SubResource("CanvasTexture_xuw83")
-lifetime = 600.0
+lifetime = 200.0
 one_shot = true
 explosiveness = 0.99
 collision_base_size = 8.93

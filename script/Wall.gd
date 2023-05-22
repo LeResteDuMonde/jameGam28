@@ -3,12 +3,16 @@ class_name Wall
 var hp= 2000
 var looseHpSpeed = 100
 var label="wall"
+var particules = preload("res://scene/wallShatter.tscn")
 
-func looseHp(delta):
+
+func looseHp(delta,pos):
 	print_debug("loose hp, current hp :  %d"% hp)
 	hp-=delta*looseHpSpeed
+	PM.play(particules,pos)
 	if hp<0:
 		queue_free()
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	super._ready()

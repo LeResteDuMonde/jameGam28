@@ -21,6 +21,7 @@ config/icon="res://xtra/icon.png"
 GM="*res://script/gameManager.gd"
 CM="*res://script/cursorManager.gd"
 AM="*res://script/audioManager.gd"
+PM="*res://script/particulesManager.gd"
 
 [display]
 
