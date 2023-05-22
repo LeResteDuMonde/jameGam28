@@ -14,4 +14,5 @@ export_presets.cfg
 data_*/
 mono_crash.*.json
 
-export/
+export/scene/main_scene.tescn
+scene/main_scene.tscn

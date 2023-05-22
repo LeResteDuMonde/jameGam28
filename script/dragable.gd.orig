@@ -30,7 +30,11 @@ func move(delta):
 	return
 
 func m_input_event(viewport, event, shape_idx):
+<<<<<<< Updated upstream
 #	print_debug("input event")
+=======
+	#print_debug("input event")
+>>>>>>> Stashed changes
 	if Input.is_action_just_pressed("click") && !CM.selecting:
 		select()
 	
